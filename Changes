@@ -1,0 +1,47 @@
+==================================================
+Changes from 2012-06-15 00:00:00 +0000 to present.
+==================================================
+
+-----------------------------------------
+version 0.01 at 2013-06-15 21:00:39 +0000
+-----------------------------------------
+
+  Change: 9feebd1936660e6f4bf8fc34e2533e64934486d0
+  Author: Lieven Hollevoet <hollie@lika.be>
+  Date : 2013-06-15 22:59:13 +0000
+
+    Ignore release folders in git 
+
+  Change: 91e84c90734ac8bfa4208afac45aba8032220c85
+  Author: Lieven Hollevoet <hollie@lika.be>
+  Date : 2013-06-15 22:55:05 +0000
+
+    Fixed release tests reported by Dist::Zilla 
+
+  Change: 0d09da3982a21e3f19a4cc5cf0ef8a22e273ee55
+  Author: Lieven Hollevoet <hollie@lika.be>
+  Date : 2013-06-15 22:41:12 +0000
+
+    Basic verification OK for parsing the output xml file 
+
+  Change: 45599a0a50772051dd33c19fa3bad5145a2a92d4
+  Author: Lieven Hollevoet <hollie@lika.be>
+  Date : 2013-06-15 14:10:53 +0000
+
+    Merge remote-tracking branch 'origin/master' 
+
+  Change: b154080f52f9706b58aac88447f53c245c85ccee
+  Author: Lieven Hollevoet <hollie@lika.be>
+  Date : 2013-06-15 14:10:23 +0000
+
+    Added dist.ini file as a start 
+
+  Change: aa1b01ce14640e8a8d9770534b528fb9c7e24b75
+  Author: Lieven Hollevoet <hollie@lika.be>
+  Date : 2013-06-15 05:09:36 +0000
+
+    Initial commit 
+
+================
+End of releases.
+================
