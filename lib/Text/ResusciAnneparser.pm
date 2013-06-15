@@ -12,55 +12,61 @@ use XML::Simple qw(:strict);
 use Data::Dumper;
 
 has infile => (
-	is       => 'ro',
-	isa      => 'Str',
-	required => 1,
+    is       => 'ro',
+    isa      => 'Str',
+    required => 1,
 );
 
 use Carp qw/croak carp/;
 
 # Ensure we read the inputfile after constructing the object
 sub BUILD {
-	my $self = shift;
-	$self->{_data} = {};
-	$self->_read_infile;
+    my $self = shift;
+    $self->{_data} = {};
+    $self->_read_infile;
 }
 
 sub _read_infile {
-	
-	my $self = shift;
-	
-	my $certificates = XMLin($self->{infile}, ForceArray => 1, KeyAttr => {user => 'login'});
-	
-	# Sort users according to the ones who got a certificate and the ones who did not
-	foreach my $user (keys %{$certificates->{user}}) {
-		
-		my $names = {'givenname' => $certificates->{user}->{$user}->{givenname}, 'familyname' => $certificates->{user}->{$user}->{familyname}};
-		
-		if (defined $certificates->{user}->{$user}->{'course'}){
-			my $course = $certificates->{user}->{$user}->{'course'}->[0];
-			my $dt = DateTime->new(year => $course->{year},
-									month => $course->{month},
-									day   => $course->{day});
-			
-			# Make an entry under {certs}
-			# Entry contains the course date and email address
-			push (@{$self->{_data}->{certs}->{$dt->ymd}}, $names);
-		} else {
-			push (@{$self->{_data}->{training}}, $names);
-		}
-	}	
-	
+
+    my $self = shift;
+
+    my $certificates =
+      XMLin( $self->{infile}, ForceArray => 1, KeyAttr => { user => 'login' } );
+
+# Sort users according to the ones who got a certificate and the ones who did not
+    foreach my $user ( keys %{ $certificates->{user} } ) {
+
+        my $names = {
+            'givenname'  => $certificates->{user}->{$user}->{givenname},
+            'familyname' => $certificates->{user}->{$user}->{familyname}
+        };
+
+        if ( defined $certificates->{user}->{$user}->{'course'} ) {
+            my $course = $certificates->{user}->{$user}->{'course'}->[0];
+            my $dt     = DateTime->new(
+                year  => $course->{year},
+                month => $course->{month},
+                day   => $course->{day}
+            );
+
+            # Make an entry under {certs}
+            # Entry contains the course date and email address
+            push( @{ $self->{_data}->{certs}->{ $dt->ymd } }, $names );
+        } else {
+            push( @{ $self->{_data}->{training} }, $names );
+        }
+    }
+
 }
 
 sub certified {
-	my $self = shift;
-	return $self->{_data}->{certs};
+    my $self = shift;
+    return $self->{_data}->{certs};
 }
 
 sub in_training {
-	my $self = shift;
-	return $self->{_data}->{training};
+    my $self = shift;
+    return $self->{_data}->{training};
 }
 
 # Speed up the Moose object construction
@@ -78,7 +84,7 @@ my $certificates = Text::ResusciAnneparser->new(infile => 'certificates.xml');
 
 The Resusci Anne Skills Station is a basic life support training station used by people
 involved in first-line support in healthcare.
-The training station keeps track of who trained when. This module enables parsing the 
+The training station keeps track of who trained when. This module enables parsing the
 xml output file to be able to process the data.
 
 =head1 METHODS
@@ -103,7 +109,7 @@ of people.
 
 A single person entry is a hash containing the givenname and the familiname of a person.
 
-E.g. 
+E.g.
            '2013-04-07' => [
                              {
                                'givenname' => 'Piet',
@@ -126,6 +132,9 @@ E.g.
 Returns an array of people who started the exercise but who did not completed it and hence have not received
 a certificate yet
 
-=cut
+=head2 BUILD
 
+Helper function to run custome code after the object has been created by Moose.
+
+=cut
 
