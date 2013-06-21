@@ -36,9 +36,18 @@ sub _read_infile {
 # Sort users according to the ones who got a certificate and the ones who did not
     foreach my $user ( keys %{ $certificates->{user} } ) {
 
+		my $fname = $certificates->{user}->{$user}->{familyname};
+		my $gname = $certificates->{user}->{$user}->{givenname};
+	
+		# Ensure no leading/trailing spaces are in the name
+		$fname =~ s/^\s+//; # strip white space from the beginning
+    	$fname =~ s/\s+$//; # strip white space from the end
+		$gname =~ s/^\s+//; # strip white space from the beginning
+    	$gname =~ s/\s+$//; # strip white space from the end
+        
         my $names = {
-            'givenname'  => $certificates->{user}->{$user}->{givenname},
-            'familyname' => $certificates->{user}->{$user}->{familyname}
+            'givenname'  => $gname,
+            'familyname' => $fname
         };
 
         if ( defined $certificates->{user}->{$user}->{'course'} ) {
