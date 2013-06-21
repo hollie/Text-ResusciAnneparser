@@ -1,7 +1,7 @@
 #! /usr/bin/env perl
 
 use strict;
-use 5.016;
+use 5.012;
 use Text::ResusciAnneparser;
 
 my $parser = Text::ResusciAnneparser->new(infile => 'certs.xml');
@@ -19,7 +19,7 @@ basic.pl - First test script for the Text::ResusciAnne parser module
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 AUTHOR
 

@@ -28,4 +28,8 @@ my $training  = $parser->in_training();
 is $certified->{'2012-10-03'}->[0]->{givenname}, 'Three', "Found expected certified person";
 is scalar(@{$training}), 3, "Found 3 people in training";
 
+# Verify we remove trailing/leading spaces from names
+is $certified->{'2012-10-10'}->[0]->{givenname}, 'Four', "Givenname cleanup";
+is $certified->{'2012-10-10'}->[0]->{familyname}, 'User', "Familyname cleanup";
+
 done_testing();

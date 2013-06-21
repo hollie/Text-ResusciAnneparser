@@ -1,10 +1,34 @@
 ==================================================
-Changes from 2012-06-15 00:00:00 +0000 to present.
+Changes from 2012-06-21 00:00:00 +0000 to present.
 ==================================================
 
 -----------------------------------------
-version 0.01 at 2013-06-15 21:00:39 +0000
+version 0.02 at 2013-06-21 18:57:10 +0000
 -----------------------------------------
+
+  Change: c4424e28d520f389c07e3c5c870680e5e07862df
+  Author: Lieven Hollevoet <hollie@lika.be>
+  Date : 2013-06-21 20:55:54 +0000
+
+    Bumped version to 0.02 and fixed release tests 
+
+  Change: dea87c91f0659e80e24d22bb69e7a647793fe0a1
+  Author: Lieven Hollevoet <hollie@lika.be>
+  Date : 2013-06-21 20:52:34 +0000
+
+    Added removal of leading/trailing spaces in the name fields 
+
+  Change: eb3fddf853eae6d079bac1815654bb5d1acdd4c2
+  Author: Lieven Hollevoet <hollie@lika.be>
+  Date : 2013-06-17 20:17:15 +0000
+
+    Removed overly strict Perl version requirement 
+
+  Change: 800f0c269a9494cb1c218e298b5114d99d76c397
+  Author: Lieven Hollevoet <hollie@lika.be>
+  Date : 2013-06-15 23:00:48 +0000
+
+    v0.01 
 
   Change: 9feebd1936660e6f4bf8fc34e2533e64934486d0
   Author: Lieven Hollevoet <hollie@lika.be>
@@ -41,6 +65,16 @@ version 0.01 at 2013-06-15 21:00:39 +0000
   Date : 2013-06-15 05:09:36 +0000
 
     Initial commit 
+
+-----------------------------------------
+version 0.01 at 2013-06-15 21:00:49 +0000
+-----------------------------------------
+
+  Change: 79cb043de02677eea8988ea59cee13d522e12308
+  Author: Lieven Hollevoet <hollie@lika.be>
+  Date : 2013-06-15 23:00:49 +0000
+
+    Build results of 800f0c2 (on master) 
 
 ================
 End of releases.

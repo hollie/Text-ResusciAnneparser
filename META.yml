@@ -21,9 +21,9 @@ requires:
   XML::Simple: 0
   autodie: 0
   namespace::autoclean: 0
-  perl: 5.016
+  perl: 5.012
   strict: 0
 resources:
   bugtracker: https://github.com/hollie/text-resuscianneparser-perl/issues
   repository: git://github.com/hollie/text-resuscianneparser-perl.git
-version: 0.01
+version: 0.02
