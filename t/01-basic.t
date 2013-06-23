@@ -9,6 +9,7 @@ use Test::More;
 
 BEGIN { use_ok 'Text::ResusciAnneparser'; }
 BEGIN { use_ok 'Test::Exception'; }
+require Test::Exception;
 
 # Check we get an error message on missing input parameters
 my $parser;

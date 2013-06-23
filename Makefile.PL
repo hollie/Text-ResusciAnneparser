@@ -12,6 +12,7 @@ my %WriteMakefileArgs = (
   "ABSTRACT" => "Parser for XML logfiles of the Resusci Anne Skills Station software",
   "AUTHOR" => "Lieven Hollevoet <hollie\@cpan.org>",
   "BUILD_REQUIRES" => {
+    "Test::Exception" => 0,
     "Test::More" => 0
   },
   "CONFIGURE_REQUIRES" => {
@@ -33,7 +34,7 @@ my %WriteMakefileArgs = (
     "namespace::autoclean" => 0,
     "strict" => 0
   },
-  "VERSION" => "0.02",
+  "VERSION" => "0.03",
   "test" => {
     "TESTS" => "t/*.t"
   }

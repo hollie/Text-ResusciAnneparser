@@ -2,7 +2,7 @@ use strict;    # To keep Test::Perl::Critic happy, Moose does enable this too...
 
 package Text::ResusciAnneparser;
 {
-  $Text::ResusciAnneparser::VERSION = '0.02';
+  $Text::ResusciAnneparser::VERSION = '0.03';
 }
 
 use Moose;
@@ -98,7 +98,7 @@ Text::ResusciAnneparser - Parser for XML logfiles of the Resusci Anne Skills Sta
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 
